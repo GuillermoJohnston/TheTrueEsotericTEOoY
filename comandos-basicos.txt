@@ -1,0 +1,12 @@
+Para formatear con clang:
+	clang-format -style=Microsoft -i src/<nombre del archivo>
+El Microsoft es el mismo que esta en el archivo .clang-format, aunque no se si usa ese archivo o de otro lugar
+ 
+al realizar commits:
+	git commit -S -m "CL:" -m " lo que hace el commit en formato markdown"
+Hay que ver si es mas o menos lo que quiere que hagamos este año
+
+Para compilar:
+	rm -rf build // borrar la carpeta build, tener cuidado
+	mkdir build && cd build
+	cmake -GNinja ..
