@@ -18,9 +18,9 @@ runs:
           } > $DOX_CONF_FILE
 
           # Generate documentation
-          # dot is used to generate, from a .dot file, graph, tree and network structures. 
-          # What I need to understand is where the .dot file is located or who generates it. 
-          # The -c option is for configure plugins.
+          # dot is used to generate, from a .dot file, graph, tree and network structures.  
+          # The -c option is for configure plugins, configuring the necessary modules so 
+          # that Doxygen can generate diagrams (such as class diagrams, inheritance hierarchies, etc.).
           sudo dot -c
 
           ERROR_FILE_FLAG=$(pwd)/dox_errors.txt
@@ -38,7 +38,7 @@ runs:
               exit 0
           fi
     # Upload errors as an artifact, when failed
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       if: failure()
       with:
         name: Doxygen errors!!!
